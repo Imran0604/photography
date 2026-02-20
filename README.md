@@ -15,3 +15,4 @@ The official digital platform for **BUPPS**, showcasing our visual anthology, ev
 - [Lucide Icons](https://lucide.dev/)
 
 ## 🚀 Live Demo
+visit here: bupps.netlify.app
