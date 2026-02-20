@@ -23,6 +23,35 @@
         .m-name { font-family: 'Playfair Display'; color: #fff; font-size: 1.2rem; margin-bottom: 5px; }
         .m-role { color: var(--accent-gold); font-size: 0.9rem; font-weight: bold; text-transform: uppercase; }
         .m-dept { color: #666; font-size: 0.85rem; margin-top: 5px; }
+
+        .member-photo-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px auto; /* Centers the photo */
+            border-radius: 50%;
+            padding: 3px;
+            border: 2px solid var(--accent-gold); /* Cinematic gold ring */
+            overflow: hidden;
+            background: #222;
+        }
+
+        .member-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the face isn't stretched */
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .member-info-card {
+            text-align: center; /* Centers the text under the photo */
+            border-left: none; /* Removing the left border for a cleaner centered look */
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .member-info-card:hover .member-photo {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
     </style>
 </head>
 <body>
@@ -35,36 +64,36 @@
 
     <script>
         const executivePanel = [
-            { name: "MD Ibrahim Hossain Niloy", role: "President", dept: "Management Studies" },
-            { name: "Niaz Mahmud Zisan", role: "General Secretary", dept: "Management Studies" },
-            { name: "Mehedi Hasan Shihab", role: "Senior Vice President (Internal)", dept: "Mass Communication and Journalism" },
-            { name: "Jilkadus Samy", role: "Senior Vice President (Documentation)", dept: "Management Studies" },
-            { name: "Rezwana Fareha Dolon", role: "Senior Vice President (External)", dept: "Finance & Banking" },
-            { name: "Nuzhat Tasnim", role: "Treasurer", dept: "English" },
-            { name: "Fatema Tuz Jannat Noor", role: "Vice President (Admin)", dept: "Mass Communication and Journalism" },
-            { name: "Jahanara Akter Anu", role: "Vice President (Communications)", dept: "English" },
-            { name: "Atiya Bintey Atiq", role: "Vice President (Publications)", dept: "Environmental Science" },
-            { name: "Mashrafi Rahman Jahin", role: "Vice President (Operations)", dept: "Management Studies" },
-            { name: "Israt Jahan Rifat", role: "Vice President (Events)", dept: "English" },
-            { name: "Sandipan Baral", role: "Vice President (Cultural)", dept: "Management Studies" },
-            { name: "Musfiqur Rahman Dipto", role: "Vice President (Logistics)", dept: "Management Studies" },
-            { name: "Kazi Aminur Rahman", role: "Vice President (Creative)", dept: "Accounting and Information Systems" },
-            { name: "Tanvir Hossain Tonmoy", role: "Vice President (Documentation)", dept: "Management Studies" },
-            { name: "Jenifa Tabassum Toma", role: "Joint Secretary", dept: "Management Studies" },
-            { name: "Abd Al Mohsin Siraj", role: "Joint Secretary", dept: "Information and Communication Technology" },
-            { name: "Farhana Yasmin", role: "Joint Secretary", dept: "Environmental Science" },
-            { name: "Sakiba Samora Raima", role: "Joint Secretary", dept: "Management Studies" },
-            { name: "Rifat Abdullah", role: "Joint Secretary", dept: "Finance & Banking" },
-            { name: "Mohammad Arafat Al Rafid", role: "Joint Secretary", dept: "Management Studies" },
-            { name: "Farjana Ulfat Nishat", role: "Organizing Secretary", dept: "English" },
-            { name: "Arnab Sarker Apu", role: "Organizing Secretary", dept: "Accounting and Information Systems" },
-            { name: "Tanvir Ahmed", role: "Organizing Secretary", dept: "International Relations" },
-            { name: "Maysha Samiha Eshika", role: "Organizing Secretary", dept: "Development Studies" },
-            { name: "Sabrina Nuzhat Momo", role: "Organizing Secretary", dept: "Management Studies" },
-            { name: "MD Sayem Pasha Shafin", role: "Office Secretary", dept: "Management Studies" },
-            { name: "Mst. Sima Khatun", role: "Office Secretary", dept: "English" },
-            { name: "Parvege Hossain", role: "Office Secretary", dept: "Mass Communication and Journalism" },
-            { name: "Ismat Marzan Barsha", role: "Office Secretary", dept: "Law" }
+            { name: "MD Ibrahim Hossain Niloy", role: "President", dept: "Management Studies", img: "images/Ec_Panel/1.png" },
+            { name: "Niaz Mahmud Zisan", role: "General Secretary", dept: "Management Studies", img: "images/Ec_Panel/2.png" },
+            { name: "Mehedi Hasan Shihab", role: "Senior Vice President (Internal)", dept: "Mass Communication and Journalism", img: "images/Ec_Panel/3.png" },
+            { name: "Jilkadus Samy", role: "Senior Vice President (Documentation)", dept: "Management Studies", img: "images/Ec_Panel/4.png" },
+            { name: "Rezwana Fareha Dolon", role: "Senior Vice President (External)", dept: "Finance & Banking", img: "images/Ec_Panel/5.png" },
+            { name: "Nuzhat Tasnim", role: "Treasurer", dept: "English", img: "images/Ec_Panel/6.png" },
+            { name: "Fatema Tuz Jannat Noor", role: "Vice President (Admin)", dept: "Mass Communication and Journalism", img: "images/Ec_Panel/7.png" },
+            { name: "Jahanara Akter Anu", role: "Vice President (Communications)", dept: "English", img: "images/Ec_Panel/8.png"},
+            { name: "Atiya Bintey Atiq", role: "Vice President (Publications)", dept: "Environmental Science", img: "images/Ec_Panel/9.png" },
+            { name: "Mashrafi Rahman Jahin", role: "Vice President (Operations)", dept: "Management Studies", img: "images/Ec_Panel/10.png" },
+            { name: "Israt Jahan Rifat", role: "Vice President (Events)", dept: "English", img: "images/Ec_Panel/11.png" },
+            { name: "Sandipan Baral", role: "Vice President (Cultural)", dept: "Management Studies", img: "images/Ec_Panel/12.png" },
+            { name: "Musfiqur Rahman Dipto", role: "Vice President (Logistics)", dept: "Management Studies", img: "images/Ec_Panel/13.png" },
+            { name: "Kazi Aminur Rahman", role: "Vice President (Creative)", dept: "Accounting and Information Systems", img: "images/Ec_Panel/14.png" },
+            { name: "Tanvir Hossain Tonmoy", role: "Vice President (Documentation)", dept: "Management Studies", img: "images/Ec_Panel/15.png" },
+            { name: "Jenifa Tabassum Toma", role: "Joint Secretary", dept: "Management Studies", img:"images/Ec_Panel/16.png"},
+            { name: "Abd Al Mohsin Siraj", role: "Joint Secretary", dept:"Information and Communication Technology", img:"images/Ec_Panel/17.png"},
+            { name:"Farhana Yasmin", role:"Joint Secretary", dept:"Environmental Science" ,img:"images/Ec_Panel/18.png"},
+            { name: "Sakiba Samora Raima", role: "Joint Secretary", dept: "Management Studies", img: "images/Ec_Panel/19.png" },
+            { name: "Rifat Abdullah", role: "Joint Secretary", dept: "Finance & Banking", img: "images/Ec_Panel/20.png" },
+            { name: "Mohammad Arafat Al Rafid", role: "Joint Secretary", dept: "Management Studies", img: "images/Ec_Panel/21.png" },
+            { name: "Farjana Ulfat Nishat", role: "Organizing Secretary", dept: "English", img: "images/Ec_Panel/22.png" },
+            { name: "Arnab Sarker Apu", role: "Organizing Secretary", dept: "Accounting and Information Systems", img: "images/Ec_Panel/23.png" },
+            { name: "Tanvir Ahmed", role: "Organizing Secretary", dept: "International Relations", img: "images/Ec_Panel/24.png" },
+            { name: "Maysha Samiha Eshika", role: "Organizing Secretary", dept: "Development Studies", img: "images/Ec_Panel/25.png" },
+            { name: "Sabrina Nuzhat Momo", role: "Organizing Secretary", dept: "Management Studies", img: "images/Ec_Panel/26.png" },
+            { name: "MD Sayem Pasha Shafin", role: "Office Secretary", dept: "Management Studies", img: "images/Ec_Panel/27.png" },
+            { name: "Mst. Sima Khatun", role: "Office Secretary", dept: "English", img: "images/Ec_Panel/28.png" },
+            { name: "Parvege Hossain", role: "Office Secretary", dept: "Mass Communication and Journalism", img: "images/Ec_Panel/29.png" },
+            { name: "Ismat Marzan Barsha", role: "Office Secretary", dept: "Law", img:"images/Ec_Panel/30.png"}
         ];
 
         const params = new URLSearchParams(window.location.search);
@@ -75,15 +104,22 @@
         if (panelType === 'executive') {
             titleEl.innerText = "Executive Panel 2025-2026";
             executivePanel.forEach(m => {
+                // Use member image if it exists, otherwise use a placeholder or icon
+                const imageSrc = m.img ? m.img : "images/members/placeholder.jpg";
+                
                 gridEl.innerHTML += `
                     <div class="member-info-card">
+                        <div class="member-photo-container">
+                            <img src="${imageSrc}" alt="${m.name}" class="member-photo">
+                        </div>
                         <div class="m-name">${m.name}</div>
                         <div class="m-role">${m.role}</div>
                         <div class="m-dept">${m.dept}</div>
                     </div>
                 `;
             });
-        } else {
+        }
+        else {
             titleEl.innerText = panelType.charAt(0).toUpperCase() + panelType.slice(1) + " Panel";
             gridEl.innerHTML = "<p style='color:#888'>Data coming soon...</p>";
         }
