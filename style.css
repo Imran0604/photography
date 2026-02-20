@@ -81,7 +81,7 @@ h1, h2 {
 }
 
 .nav-container {
-    width: 85%;
+    width: 90%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -620,4 +620,35 @@ h1, h2 {
     .hero h1 { font-size: 1.8rem; }
     .social-grid { grid-template-columns: 1fr; } /* Stack socials in 1 column */
     .num { font-size: 2.5rem; }
+}
+
+/*Mobile menubar*/
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hide off-screen */
+        width: 70%;
+        height: 100vh;
+        background: rgba(15, 15, 15, 0.98);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.4s ease-in-out;
+        z-index: 999;
+    }
+
+    /* When menu is open */
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-toggle {
+        display: block;
+        z-index: 1000;
+        color: var(--accent-gold);
+    }
 }

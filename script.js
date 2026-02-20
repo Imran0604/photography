@@ -53,25 +53,32 @@ window.addEventListener('scroll', () => {
 // Refresh Lucide icons to include the new camera logo
 lucide.createIcons();
 
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
 
-//toggle mobile menu
-const menu = document.querySelector('#mobile-menu');
-const menuLinks = document.querySelector('.nav-menu');
-const navItems = document.querySelectorAll('.nav-link');
-
-// 1. Toggle Mobile Menu
-menu.addEventListener('click', function() {
-    menu.classList.toggle('is-active');
-    menuLinks.classList.toggle('active');
+// 1. Toggle Menu
+navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    
+    // Optional: Change icon from menu to 'X' if using Lucide
+    const icon = navToggle.querySelector('i');
+    if (navMenu.classList.contains('active')) {
+        icon.setAttribute('data-lucide', 'x');
+    } else {
+        icon.setAttribute('data-lucide', 'menu');
+    }
+    lucide.createIcons();
 });
 
 // 2. Close Menu when a link is clicked
-navItems.forEach(link => {
+navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        menu.classList.remove('is-active');
-        menuLinks.classList.remove('active');
+        navMenu.classList.remove('active');
     });
 });
+
+
 
 // 3. Smooth Scroll offset fix (optional but helpful)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
