@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUPPS | Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <style>
+        .gallery-container { padding: 100px 5%; background: #0f0f0f; min-height: 100vh; }
+        .gallery-header { text-align: center; margin-bottom: 50px; }
+        .gallery-header h1 { color: #c9a227; font-size: 3rem; font-family: 'Playfair Display', serif; }
+        
+        /* Masonry Layout */
+        .masonry {
+            column-count: 4;
+            column-gap: 15px;
+        }
+        .masonry-item {
+            margin-bottom: 15px;
+            break-inside: avoid;
+            overflow: hidden;
+            border: 1px solid #222;
+        }
+        .masonry-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: grayscale(100%);
+            cursor: pointer;
+        }
+        .masonry-item img:hover {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        @media (max-width: 1000px) { .masonry { column-count: 3; } }
+        @media (max-width: 768px) { .masonry { column-count: 2; } }
+    </style>
+</head>
+<body>
+
+    <div class="gallery-container">
+        <div class="gallery-header">
+            <h1>The Visual Anthology</h1>
+            <p style="color: #888;">Explore the moments captured through our lens.</p>
+        </div>
+
+        <div class="masonry" id="gallery-grid"></div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="index.html" class="btn btn-outline">Back to Home</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script>
+        const grid = document.getElementById('gallery-grid');
+        const totalPhotos = 55;
+        
+        // IMPORTANT: Ensure your images are named 1.jpg, 2.jpg, etc. in an 'images' folder
+        for (let i = 1; i <= totalPhotos; i++) {
+            const item = document.createElement('div');
+            item.className = 'masonry-item';
+            
+            item.innerHTML = `
+                <a href="images/${i}.jpg" data-lightbox="bupps-gallery" data-title="BUPPS Capture ${i}">
+                    <img src="images/${i}.jpg" alt="Photography ${i}" loading="lazy">
+                </a>
+            `;
+            grid.appendChild(item);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUP Photography Club | Capturing Moments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--Navigation Bar-->
+    <nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">
+            <img src="images/bupps_logo.png" alt="BUPPS Logo" class="logo-img">
+            <span>BUPPS</span>
+        </a>
+
+        <div class="nav-menu">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#gallery" class="nav-link">Our Partners</a>
+            <a href="#events" class="nav-link">Events</a>
+            <a href="#portal" class="btn-portal">Member Portal</a>
+        </div>
+        
+        <div class="nav-toggle" id="mobile-menu">
+            <i data-lucide="menu"></i>
+        </div>
+        </div>
+    </nav>
+    
+    <!--Hero Section-->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
+            <h1>BUP PHOTOGRAPHY CLUB</h1>
+            <p>Capturing Moments. Creating Stories.</p>
+            <div class="hero-btns">
+                <a href="gallery.html" class="btn btn-gold">View Gallery</a>
+                <a href="#contact" class="btn btn-outline">Join Us</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </header>
+
+    <!--About Section-->
+    <section class="about" id="about">
+    <div class="container about-flex">
+        <div class="about-content" data-aos="fade-right" data-aos-duration="1200">
+            <h2 class="section-title-left">About BUPPS</h2>
+            <p class="intro-text">
+                <strong>BUP Photography Society (BUPPS)</strong> is the official photography club of Bangladesh University of Professionals. 
+                More than a club, BUPPS is a creative platform where students grow as visual storytellers, professionals, and collaborators. 
+                People from different backgrounds, sharing the same passion for photography, meet here.
+            </p>
+            
+            <h3 class="vision-mission-title">Vision & Mission</h3>
+            <p class="mission-text">
+                <i data-lucide="target" class="mission-icon"></i>
+                To build a creative student community that learns, collaborates, and tells stories through photography.
+            </p>
+            <br><br>
+            <p class="mission-text">
+                <i data-lucide="target" class="mission-icon"></i>
+                We are a community of visual storytellers at BUP, dedicated to freezing time and finding beauty in the mundane.
+            </p>
+        </div>
+
+        <div class="about-logo-container" data-aos="fade-left" data-aos-duration="1200">
+            <img src="images/bupps_logo.png" alt="BUPPS Logo" class="floating-logo">
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="counters">
+            <div class="counter-item" data-aos="fade-up" data-aos-delay="200">
+                <span class="num" data-val="20">0</span>+
+                <p>Events Covered</p>
+            </div>
+            <div class="counter-item" data-aos="fade-up" data-aos-delay="400">
+                <span class="num" data-val="1000">0</span>+
+                <p>Photos Captured</p>
+            </div>
+            <div class="counter-item" data-aos="fade-up" data-aos-delay="600">
+                <span class="num" data-val="100">0</span>+
+                <p>Active Members</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+    <!--Event Section-->
+    <section class="events" id="events">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Events</h2>
+        </div>
+
+        <div class="event-category-header" data-aos="fade-up">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="event-grid upcoming-grid">
+            <div class="event-card upcoming" data-aos="zoom-in">
+                <div class="event-img-container">
+                    <img src="images/upcoming.png" alt="Sfuron 6.0">
+                    <div class="status-badge">Upcoming</div>
+                </div>
+                <div class="event-info">
+                    <h3>Sfuron 6.0</h3>
+                    <p class="event-date"><i data-lucide="calendar"></i> To Be Announced</p>
+                    <p>The next chapter of our flagship exhibition.</p>
+                    <button class="btn-mini disabled">Registration Opening Soon</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="event-category-header" data-aos="fade-up" style="margin-top: 80px;">
+            <h2 class="section-title">Previous Events</h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="event-grid">
+            <a href="event-details.html?event=sfuron" class="event-card" data-aos="fade-up">
+                <div class="event-img-container">
+                    <img src="images/hero_pic.jpg" alt="Sfuron">
+                    <div class="event-overlay-glow"></div>
+                </div>
+                <div class="event-info">
+                    <h3>Sfuron</h3>
+                    <p>Annual Photography Exhibition</p>
+                    <span class="view-album">View Versions & Albums</span>
+                </div>
+            </a>
+
+            <a href="event-details.html?event=snapin" class="event-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="event-img-container">
+                    <img src="images/snap.jpg" alt="Snap In">
+                    <div class="event-overlay-glow"></div>
+                </div>
+                <div class="event-info">
+                    <h3>Snap In</h3>
+                    <p>Intra-BUP Photography Competition</p>
+                    <span class="view-album">View Versions & Albums</span>
+                </div>
+            </a>
+
+            <a href="event-details.html?event=shutterskills" class="event-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="event-img-container">
+                    <img src="images/shutter.jpg" alt="Shutter Skills">
+                    <div class="event-overlay-glow"></div>
+                </div>
+                <div class="event-info">
+                    <h3>Shutter Skills</h3>
+                    <p>Skill Development Workshop</p>
+                    <span class="view-album">View Versions & Albums</span>
+                </div>
+            </a>
+
+            <a href="event-details.html?event=contrast" class="event-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="event-img-container">
+                    <img src="images/contrast.jpg" alt="Contrast">
+                    <div class="event-overlay-glow"></div>
+                </div>
+                <div class="event-info">
+                    <h3>Contrast</h3>
+                    <p>Visual Storytelling Series</p>
+                    <span class="view-album">View Versions & Albums</span>
+                </div>
+            </a>
+            </div>
+        </div>
+    </section>
+
+    <!--Member portal-->
+    <section class="member-portal" id="portal">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Member Portal</h2>
+    </div>
+    
+    <div class="container">
+        <div class="portal-grid">
+            <a href="members.html?panel=advisory" class="portal-card" data-aos="fade-up">
+                <div class="portal-icon"><i data-lucide="award"></i></div>
+                <h3>Advisory Panel</h3>
+                <p>Guidance from our respected mentors.</p>
+            </a>
+
+            <a href="members.html?panel=moderators" class="portal-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="portal-icon"><i data-lucide="shield-check"></i></div>
+                <h3>Moderators</h3>
+                <p>Overseeing club operations and discipline.</p>
+            </a>
+
+            <a href="members.html?panel=executive" class="portal-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="portal-icon"><i data-lucide="users"></i></div>
+                <h3>Executive Panel</h3>
+                <p>The core leadership driving BUPPS forward.</p>
+            </a>
+        </div>
+        </div>
+    </section>
+
+    <!--Contact Section-->
+    <section class="contact-section" id="contact">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Get In Touch</h2>
+    </div>
+
+    <div class="container contact-flex">
+        <div class="contact-info" data-aos="fade-right">
+            <div class="info-box">
+                <i data-lucide="mail"></i>
+                <div>
+                    <h4>Email Us</h4>
+                    <p>bupphotographysociety@gmail.com</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <i data-lucide="phone"></i>
+                <div>
+                    <h4>Call Us</h4>
+                    <p>+8801749657951</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-grid" data-aos="fade-left">
+            <a href="https://web.facebook.com/bupphotographysociety" class="social-card fb">
+                <i data-lucide="facebook"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/bup_ps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-card ig">
+                <i data-lucide="instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://www.linkedin.com/company/bupps/" class="social-card ln">
+                <i data-lucide="linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+        </div>
+    </section>
+
+    <!--Footer Section-->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 BUP Photography Society. All Rights Reserved.</p>
+            <p>Developed with Passion for <strong>BUPPS</strong></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

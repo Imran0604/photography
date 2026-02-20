@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Timeline | BUPPS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .details-container { padding: 120px 10%; min-height: 100vh; }
+        .version-list { margin-top: 50px; }
+        .version-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px;
+            border-bottom: 1px solid #333;
+            transition: 0.3s;
+        }
+        .version-row:hover { background: rgba(201, 162, 39, 0.05); }
+        .v-name { font-size: 1.5rem; color: var(--accent-gold); font-family: 'Playfair Display'; }
+        .v-date { color: #888; }
+        .btn-mini { padding: 5px 15px; border: 1px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; border-radius: 4px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="details-container">
+        <h1 id="event-title" style="color: white; font-size: 3rem;"></h1>
+        <div id="version-content" class="version-list"></div>
+        <br><br>
+        <a href="index.html#events" class="btn-portal">Back to Events</a>
+    </div>
+
+    <script>
+        const eventData = {
+            sfuron: {
+                title: "Sfuron",
+                versions: [
+                    { name: "Sfuron 5.0", date: "7–8 May 2024", link: "https://www.facebook.com/events/382218418018657" },
+                    { name: "Sfuron 4.0", date: "27–28 Sept 2023", link: "https://www.facebook.com/events/1743248849437446" },
+                    { name: "Sfuron 3.0", date: "18–19 Oct 2022", link: "https://www.facebook.com/events/619189803152652" },
+                    { name: "Sfuron 2.0", date: "24–25 July 2019", link: "https://www.facebook.com/events/2521516631200508" },
+                    { name: "Sfuron 1.0", date: "26–27 July 2018", link: "https://www.facebook.com/events/710042576054533" }
+                ]
+            },
+            snapin: {
+                title: "Snap In",
+                versions: [
+                    { name: "Snap In 4.0", date: "15 June – 2 July 2024", link: "https://www.facebook.com/events/1363686124686921" },
+                    { name: "Snap In 3.0", date: "27 Feb - 2 March 2024", link: "https://www.facebook.com/events/926103822066472" },
+                    { name: "Snap In 2.0", date: "7-15 Feb 2023", link: "https://www.facebook.com/events/502072555444529" },
+                    { name: "Snap In 1.0", date: "6–20 May 2022", link: "https://www.facebook.com/events/1102273883963316" }
+                ]
+            },
+                contrast: {
+                    title: "Contrast",
+                    versions: [
+                        { name: "Contrast 2.0", date: "17–19 Jan 2019", link: "https://www.facebook.com/events/297660820825686/328556254402809/?event_time_id=328556261069475" },
+                        { name: "Contrast 1.0", date: "20-23 Sept 2017", link: "https://www.facebook.com/events/1935104140071974/1935104163405305" }
+                    ]
+            },
+                shutterskills: {
+                title: "Shutter Skills",
+                versions: [
+                    { name: "Shutter Skills 2.0", date: "20-21 April 2024", link: "https://www.facebook.com/events/835385041919716" },
+                    { name: "Shutter Skills 1.0", date: "12-13 Aug 2023", link: "https://www.facebook.com/events/1322042135402666" }
+                ]
+            }
+            
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const eventKey = params.get('event');
+        const data = eventData[eventKey];
+
+        if (data) {
+            document.getElementById('event-title').innerText = data.title;
+            const container = document.getElementById('version-content');
+            data.versions.forEach(v => {
+                container.innerHTML += `
+                    <div class="version-row">
+                        <div>
+                            <div class="v-name">${v.name}</div>
+                            <div class="v-date">${v.date}</div>
+                        </div>
+                        <a href="${v.link}" class="btn-mini">event-details</a>
+                    </div>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>

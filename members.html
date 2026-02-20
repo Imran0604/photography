@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BUPPS | Members Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .members-container { padding: 120px 8%; min-height: 100vh; background: #0f0f0f; }
+        .member-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+        .member-info-card {
+            background: #161616;
+            padding: 25px;
+            border-left: 3px solid var(--accent-gold);
+            transition: 0.3s;
+        }
+        .member-info-card:hover { background: #1a1a1a; transform: scale(1.02); }
+        .m-name { font-family: 'Playfair Display'; color: #fff; font-size: 1.2rem; margin-bottom: 5px; }
+        .m-role { color: var(--accent-gold); font-size: 0.9rem; font-weight: bold; text-transform: uppercase; }
+        .m-dept { color: #666; font-size: 0.85rem; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="members-container">
+        <h1 id="panel-title" style="color: white; font-family: 'Playfair Display'; font-size: 3rem;"></h1>
+        <div id="members-grid" class="member-list"></div>
+        <br><br>
+        <a href="index.html#portal" class="btn-portal">Back to Portal</a>
+    </div>
+
+    <script>
+        const executivePanel = [
+            { name: "MD Ibrahim Hossain Niloy", role: "President", dept: "Management Studies" },
+            { name: "Niaz Mahmud Zisan", role: "General Secretary", dept: "Management Studies" },
+            { name: "Mehedi Hasan Shihab", role: "Senior Vice President (Internal)", dept: "Mass Communication and Journalism" },
+            { name: "Jilkadus Samy", role: "Senior Vice President (Documentation)", dept: "Management Studies" },
+            { name: "Rezwana Fareha Dolon", role: "Senior Vice President (External)", dept: "Finance & Banking" },
+            { name: "Nuzhat Tasnim", role: "Treasurer", dept: "English" },
+            { name: "Fatema Tuz Jannat Noor", role: "Vice President (Admin)", dept: "Mass Communication and Journalism" },
+            { name: "Jahanara Akter Anu", role: "Vice President (Communications)", dept: "English" },
+            { name: "Atiya Bintey Atiq", role: "Vice President (Publications)", dept: "Environmental Science" },
+            { name: "Mashrafi Rahman Jahin", role: "Vice President (Operations)", dept: "Management Studies" },
+            { name: "Israt Jahan Rifat", role: "Vice President (Events)", dept: "English" },
+            { name: "Sandipan Baral", role: "Vice President (Cultural)", dept: "Management Studies" },
+            { name: "Musfiqur Rahman Dipto", role: "Vice President (Logistics)", dept: "Management Studies" },
+            { name: "Kazi Aminur Rahman", role: "Vice President (Creative)", dept: "Accounting and Information Systems" },
+            { name: "Tanvir Hossain Tonmoy", role: "Vice President (Documentation)", dept: "Management Studies" },
+            { name: "Jenifa Tabassum Toma", role: "Joint Secretary", dept: "Management Studies" },
+            { name: "Abd Al Mohsin Siraj", role: "Joint Secretary", dept: "Information and Communication Technology" },
+            { name: "Farhana Yasmin", role: "Joint Secretary", dept: "Environmental Science" },
+            { name: "Sakiba Samora Raima", role: "Joint Secretary", dept: "Management Studies" },
+            { name: "Rifat Abdullah", role: "Joint Secretary", dept: "Finance & Banking" },
+            { name: "Mohammad Arafat Al Rafid", role: "Joint Secretary", dept: "Management Studies" },
+            { name: "Farjana Ulfat Nishat", role: "Organizing Secretary", dept: "English" },
+            { name: "Arnab Sarker Apu", role: "Organizing Secretary", dept: "Accounting and Information Systems" },
+            { name: "Tanvir Ahmed", role: "Organizing Secretary", dept: "International Relations" },
+            { name: "Maysha Samiha Eshika", role: "Organizing Secretary", dept: "Development Studies" },
+            { name: "Sabrina Nuzhat Momo", role: "Organizing Secretary", dept: "Management Studies" },
+            { name: "MD Sayem Pasha Shafin", role: "Office Secretary", dept: "Management Studies" },
+            { name: "Mst. Sima Khatun", role: "Office Secretary", dept: "English" },
+            { name: "Parvege Hossain", role: "Office Secretary", dept: "Mass Communication and Journalism" },
+            { name: "Ismat Marzan Barsha", role: "Office Secretary", dept: "Law" }
+        ];
+
+        const params = new URLSearchParams(window.location.search);
+        const panelType = params.get('panel');
+        const titleEl = document.getElementById('panel-title');
+        const gridEl = document.getElementById('members-grid');
+
+        if (panelType === 'executive') {
+            titleEl.innerText = "Executive Panel 2025-2026";
+            executivePanel.forEach(m => {
+                gridEl.innerHTML += `
+                    <div class="member-info-card">
+                        <div class="m-name">${m.name}</div>
+                        <div class="m-role">${m.role}</div>
+                        <div class="m-dept">${m.dept}</div>
+                    </div>
+                `;
+            });
+        } else {
+            titleEl.innerText = panelType.charAt(0).toUpperCase() + panelType.slice(1) + " Panel";
+            gridEl.innerHTML = "<p style='color:#888'>Data coming soon...</p>";
+        }
+        lucide.createIcons();
+    </script>
+</body>
+</html>
