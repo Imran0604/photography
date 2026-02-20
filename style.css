@@ -652,3 +652,29 @@ h1, h2 {
         color: var(--accent-gold);
     }
 }
+
+@media (max-width: 768px) {
+    .hero {
+        /* Change from 'cover' to 'contain' or a specific percentage 
+           to ensure the full width of the logo is visible */
+        background-size: 110% auto; 
+        background-position: center 20%; /* Adjust 40% to move logo up/down */
+        background-repeat: no-repeat;
+        
+        /* Ensure the hero section still takes full height */
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Optional: If the background becomes too light when 'contained', 
+       add a solid color or a stronger gradient to the overlay */
+    .hero-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(15, 15, 15, 0.8) 0%,
+            rgba(15, 15, 15, 1) 100%
+        );
+    }
+}

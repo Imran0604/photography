@@ -96,15 +96,32 @@
             { name: "Ismat Marzan Barsha", role: "Office Secretary", dept: "Law", img:"images/Ec_Panel/30.png"}
         ];
 
+        const moderatorPanel = [
+            { 
+                name: "Hasib Shah Aman", 
+                role: "Lecturer", 
+                dept: "Dept of Mass Communication and Journalism", 
+                faculty: "Faculty of Security & Strategic Studies (FSSS)",
+                img: "images/hasib_shah.png" 
+            }
+        ];
+
+        const advisoryPanel = [
+            { name: "MD Shakil Khan", role: "President", tenure: "BUPPS Executive Panel 2023", img: "images/shakil.png" },
+            { name: "Sifat Sadekin", role: "General Secretary", tenure: "BUPPS Executive Panel 2023", img: "images/sifat.png" },
+            { name: "Rahad Mahmud Rifat", role: "President", tenure: "BUPPS Executive Panel 2024-25", img: "images/rahad.png" },
+            { name: "Sadia Afrin", role: "General Secretary", tenure: "BUPPS Executive Panel 2024-25", img: "images/sadia.png" }
+        ];
+
         const params = new URLSearchParams(window.location.search);
         const panelType = params.get('panel');
         const titleEl = document.getElementById('panel-title');
         const gridEl = document.getElementById('members-grid');
 
-        if (panelType === 'executive') {
-            titleEl.innerText = "Executive Panel 2025-2026";
-            executivePanel.forEach(m => {
-                // Use member image if it exists, otherwise use a placeholder or icon
+        // Reusable function to render any list
+        function renderList(data) {
+            gridEl.innerHTML = "";
+            data.forEach(m => {
                 const imageSrc = m.img ? m.img : "images/members/placeholder.jpg";
                 
                 gridEl.innerHTML += `
@@ -114,16 +131,30 @@
                         </div>
                         <div class="m-name">${m.name}</div>
                         <div class="m-role">${m.role}</div>
-                        <div class="m-dept">${m.dept}</div>
+                        <div class="m-dept">${m.dept || m.tenure}</div>
+                        ${m.faculty ? `<div class="m-dept" style="font-size: 0.75rem; margin-top: 2px;">${m.faculty}</div>` : ''}
                     </div>
                 `;
             });
         }
-        else {
-            titleEl.innerText = panelType.charAt(0).toUpperCase() + panelType.slice(1) + " Panel";
-            gridEl.innerHTML = "<p style='color:#888'>Data coming soon...</p>";
+
+        // Direct the logic based on the URL parameter
+        if (panelType === 'executive') {
+            titleEl.innerText = "Executive Panel 2025-2026";
+            renderList(executivePanel);
+        } else if (panelType === 'moderators') {
+            titleEl.innerText = "Club Moderator";
+            renderList(moderatorPanel);
+        } else if (panelType === 'advisory') {
+            titleEl.innerText = "Advisory Panel";
+            renderList(advisoryPanel);
+        } else {
+            titleEl.innerText = "BUPPS Panel";
+            gridEl.innerHTML = "<p style='color:#888'>Select a valid panel from the portal.</p>";
         }
+
         lucide.createIcons();
     </script>
+
 </body>
 </html>
